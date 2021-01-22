@@ -6,10 +6,22 @@
   "dependencies": {
     "koa": "^2.13.1",
     "koa-router": "^10.0.0",
-    "require-directory": "^2.1.1"
+    "lodash": "^4.17.20",
+    "module-alias": "^2.2.2",
+    "mysql2": "^2.2.5",
+    "qs": "^6.9.6",
+    "require-directory": "^2.1.1",
+    "sequelize": "^6.4.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "_moduleAliases": {
+    "@models": "app/models",
+    "@core": "core"
+  },
   "scripts": {
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
