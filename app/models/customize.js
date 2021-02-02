@@ -11,7 +11,9 @@ Customize.init({
     autoIncrement: true
   },
   event_name: Sequelize.STRING,
-  params: Sequelize.STRING
+  params: Sequelize.STRING,
+  ip: Sequelize.STRING,
+  token: Sequelize.STRING
 }, {
   sequelize,
   tableName: 'log_customize'

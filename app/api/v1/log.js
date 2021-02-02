@@ -8,7 +8,9 @@ const router = new Router({
 })
 
 router.get('/track', async (ctx, next) => {
-  let query = qs.parse(ctx.querystring, {arrayFormat: 'brackets'})
+  let ip = ctx.request.ip.replace('::ffff:', "")
+  let query = qs.parse(ctx.querystring, { arrayFormat: 'brackets' })
+  let token = query.token
   let eventName = query.event_name
   let params = query.params
   if (!eventName) {
@@ -17,6 +19,8 @@ router.get('/track', async (ctx, next) => {
     })
   }
   let data = {
+    ip,
+    token,
     event_name: eventName,
     params: JSON.stringify(params)
   }
