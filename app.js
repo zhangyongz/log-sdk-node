@@ -9,6 +9,7 @@ const app = new Koa()
 
 app.use(catchError)
 app.use(cors)
+app.proxy = true
 
 InitManager.initCore(app)
 
